@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "db push",
+      "type": "shell",
+      "detail": "Push the database",
+      "command": "yarn prisma db push && yarn prisma generate && yarn prisma db seed",
+      "problemMatcher": []
+    },
+    {
+      "label": "dev",
+      "type": "process",
+      "command": "yarn",
+      "args": [
+        "dev"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$tsc-watch"
+      ]
+    },
+    {
+      "type": "shell",
+      "label": "Prisma: full new migration",
+      "detail": "Generate a new migration and apply it",
+      "command": "yarn prisma migrate dev --create-only --name \"${input:migrationName}\" && yarn prisma migrate deploy && yarn prisma generate",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "migrationName",
+      "description": "Name of the migration:",
+      "default": "init",
+      "type": "promptString"
+    }
+  ]
+}
