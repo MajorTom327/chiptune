@@ -67,7 +67,7 @@
     "daisyui": "^2.51.3",
     "dotenv": "^16.0.3",
     "dotenv-cli": "^7.0.0",
-    "eslint": "^8.34.0",
+    "eslint": "^8.35.0",
     "happy-dom": "^8.9.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
